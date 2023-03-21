@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: content-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+body {
+  position: relative;
+  background: rgb(45, 70, 160);
+}
+body::-webkit-scrollbar {
+  width: 1.5rem;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 2px solid white;
+}
+body::after {
+  content: "Copyright© 1996-1998 Microsoft Corp.";
+  position: absolute;
+  width: calc(100vw - 6rem);
+  color: white;
+  margin-left: 2ch;
+  margin-bottom: 2ch;
+}
+
+.todo-app {
+  min-height: calc(100vh - 4rem);
+  padding: 1rem;
+}
+.todo-app h1 {
+  color: white;
+  margin-bottom: 4rem;
+}
+.todo-app form {
+  display: flex;
+  gap: 1rem;
+}
+.todo-app form input, .todo-app form button {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: white;
+  border: 2px solid white;
+  background: transparent;
+  box-shadow: inset 0 0 0 0 white;
+  outline: transparent;
+  transition: all 0.15s ease-in-out;
+}
+.todo-app form input::-moz-placeholder, .todo-app form button::-moz-placeholder {
+  color: white;
+}
+.todo-app form input:-ms-input-placeholder, .todo-app form button:-ms-input-placeholder {
+  color: white;
+}
+.todo-app form input::placeholder, .todo-app form button::placeholder {
+  color: white;
+}
+.todo-app form button:active {
+  background: white;
+  color: rgb(45, 70, 160);
+}
+.todo-app .todo-list-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin-top: 2rem;
+  border: 2px solid white;
+}
+.todo-app .todo-list-container .todo-list-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: black;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  width: 50%;
+  color: white;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content {
+  display: flex;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content input {
+  position: relative;
+  -webkit-appearance: none;
+  border: 1px solid white;
+  background: transparent;
+  height: 1.5ch;
+  width: 1.5ch;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content input:checked::after, .todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content input:checked::before {
+  position: absolute;
+  font-size: 1.5ch;
+  top: 1px;
+  left: 1px;
+  background: transparent;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content input:checked::after {
+  content: "/";
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content input:checked::before {
+  content: "\\";
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content h3 {
+  margin-left: 2ch;
+  flex: 1;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content button {
+  margin-left: 1rem;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content:has(input:checked) h3 {
+  color: red;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content:has(input:checked) input {
+  border-color: red;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content:has(input:checked) input::after, .todo-app .todo-list-container .todo-list-wrapper .todo-list .todo .todo-content:has(input:checked) input::before {
+  color: red;
+}
+.todo-app .todo-list-container .todo-list-wrapper .todo-list .todo:not(:first-child)::after {
+  content: "* * * * * * * * * * * * * * * * * * *";
+  width: 100%;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */
